@@ -11,7 +11,14 @@
       <p>Grab your swag!</p>
     </Modal>
   </div>
+  <div v-if="showModal2">
+    <Modal @close="toggleModal2">
+      <h1>Crazy</h1>
+      <p>Modal stuff!</p>
+    </Modal>
+  </div>
   <button @click.alt="toggleModal">Open modal (alt)</button>
+  <button @click="toggleModal2">Open modal2</button>
 </template>
 
 <script>
@@ -28,11 +35,15 @@ export default {
       header: "Sign up for the Giveaway!",
       text: "Cool stuff for half price!",
       showModal: false,
+      showModal2: false,
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModal2() {
+      this.showModal2 = !this.showModal2
     }
   },
  }
